@@ -1,0 +1,20 @@
+.note {
+    background-color: #4CAF50; /* צבע ירוק לדוגמה, ניתן לשנות */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .note p {
+    margin: 0;
+    flex-grow: 1;
+  }
+  
+  .note button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
