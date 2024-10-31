@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import styles from './AddNote.module.css'
 
-function AddNote() {
-  const [notes, setNotes] = useState([]);
+function AddNote({notes, setNotes}) {
   const colors = ['green', 'blue', 'purple', 'orange'];
 
   const handleAddNote = () => {
@@ -14,9 +13,8 @@ function AddNote() {
   };
 
   return (
-    <div>
-      {/* ... שאר הרכיבים שלך */}
-      <button onClick={handleAddNote}>+</button>
+    <div >
+      <button className={styles.addButton} onClick={handleAddNote}>+</button>
     </div>
   );
 }

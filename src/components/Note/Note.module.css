@@ -1,20 +1,30 @@
-.note {
-    background-color: #4CAF50; /* צבע ירוק לדוגמה, ניתן לשנות */
-    padding: 10px;
-    border-radius: 5px;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .note p {
-    margin: 0;
-    flex-grow: 1;
-  }
-  
-  .note button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
+.noteCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  width: 100%;
+}
+
+.noteCard p {
+  margin: 0;
+  flex-grow: 1; /* ממלא את שטח הטקסט כדי לדחוק את הכפתורים למטה */
+}
+
+.buttonsBar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px; /* ריווח נוסף אם נדרש */
+  margin-top: auto; /* דוחף את הכפתורים לתחתית הכרטיס */
+}
+
+.colorIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
