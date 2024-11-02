@@ -1,4 +1,4 @@
-
+/* 
 .App {
   background-color: #282c34;
   text-align: center;
@@ -6,3 +6,35 @@
   height: 100vh;
 }
 
+h1{
+  color: rgb(175, 168, 168);
+  margin-top: 20px;
+}
+ */
+
+
+ /* CSS גלובלי, מומלץ להוסיף ב-index.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* עיצוב של .App */
+.App {
+  background-color: #282c34;
+  text-align: center;
+  min-height: 100vh; /* מבטיח כיסוי מסך מלא */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* כוונון תוכן במרכז עם רווח מעל */
+  padding-bottom: 20px; /* רווח בתחתית כדי למנוע גלילה */
+}
+
+h1 {
+  color: rgb(175, 168, 168);
+  margin-top: 20px;
+}

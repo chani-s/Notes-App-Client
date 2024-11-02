@@ -1,11 +1,11 @@
 .notesContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    padding: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
     width: 100%;
-    margin: 10px auto;
+    margin: 0 auto; 
 }
+
 
 .notesContainer :hover {
     transform: scale(1.05);

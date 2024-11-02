@@ -7,7 +7,7 @@ function AddNote({  setNotes}) {
 
   const handleAddNote = async () => {
     const newNote = {
-      text: 'Text',
+      text: 'Click to edit',
       color: colors[Math.floor(Math.random() * colors.length)]
     };
 
