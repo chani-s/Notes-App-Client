@@ -1,4 +1,3 @@
-// ColorBar.jsx
 import React from "react";
 import styles from "./ColorBar.module.css";
 

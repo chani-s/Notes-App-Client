@@ -1,6 +1,6 @@
-// AddNote.jsx
 import styles from './AddNote.module.css';
 import { addNoteToServer } from '../../service/controller';
+
 
 function AddNote({  setNotes}) {
   const colors = ['#006D77', '#83C5BE', '#FFDDD2', '#E29578'];
@@ -18,6 +18,7 @@ function AddNote({  setNotes}) {
     }
   };
 
+  
   return (
     <div>
       <button className={styles.addButton} onClick={handleAddNote}>+</button>

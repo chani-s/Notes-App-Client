@@ -11,24 +11,9 @@ export const fetchNotes = async () => {
 };
 
 
-export const addNote = async (newNote) => {
-    try {
-        const response = await fetch('http://localhost:8080/api/notes', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newNote),
-        });
-        return await response.json(); 
-    } catch (error) {
-        console.error('Failed to add note:', error);
-    }
-};
-
 export const addNoteToServer = async (note) => {
     try {
-      const response = await fetch('http://localhost:8080/api/notes', {
+      const response = await fetch('http://localhost:8080/api/notes/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -46,7 +31,7 @@ export const addNoteToServer = async (note) => {
 
 export const deleteNote = async (id) => {
     try {
-        await fetch(`http://localhost:8080/api/notes/${id}`, { method: 'DELETE' });
+        await fetch(`http://localhost:8080/api/notes/delete/${id}`, { method: 'DELETE' });
         return id;
     } catch (error) {
         console.error('Failed to delete note:', error);
@@ -55,7 +40,7 @@ export const deleteNote = async (id) => {
 
 export const updateNoteText = async (id, updatedNote) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/notes/${id}`, {
+        const response = await fetch(`http://localhost:8080/api/notes/text/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedNote),

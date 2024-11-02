@@ -1,4 +1,3 @@
-// NoteList.jsx
 import React, { useState, useEffect } from 'react';
 import Note from '../Note/Note';
 import AddNote from '../AddNote/AddNote';
@@ -36,12 +35,14 @@ function NoteList() {
         );
     };
 
-    
+
     return (
         <div className={styles.notesContainer}>
             {notes.map(note => (
                 <div key={note.id} className={styles.noteCard}>
-                    <Note id={note.id} text={note.text} color={note.color} onDelete={handleDelete} onEdit={handleTextUpdate} onColoring={handleColorUpdate} />
+                    <Note id={note.id} text={note.text} color={note.color}
+                        onDelete={handleDelete} onEdit={handleTextUpdate}
+                        onColoring={handleColorUpdate} />
                 </div>
             ))}
             <div className={styles.noteCard}>
