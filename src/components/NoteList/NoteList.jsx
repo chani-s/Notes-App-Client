@@ -1,7 +1,8 @@
+// NoteList.jsx
 import React, { useState, useEffect } from 'react';
 import Note from '../Note/Note';
 import AddNote from '../AddNote/AddNote';
-import { fetchNotes, deleteNote, updateNote } from '../../service/controller';
+import { fetchNotes, addNote, deleteNote, updateNote } from '../../service/controller';
 
 import styles from './NoteList.module.css';
 
@@ -28,6 +29,13 @@ function NoteList() {
         );
     };
 
+    const handleAdd = async (text, color) => {
+        const newNote = await addNote({ text, color });
+        if (newNote) {
+            setNotes((prevNotes) => [...prevNotes, newNote]);
+        }
+    };
+
     return (
         <div className={styles.notesContainer}>
             {notes.map(note => (
@@ -36,7 +44,7 @@ function NoteList() {
                 </div>
             ))}
             <div className={styles.noteCard}>
-                <AddNote notes={notes} setNotes={setNotes} onClick={} />
+                <AddNote setNotes={setNotes} />
             </div>
         </div>
     );

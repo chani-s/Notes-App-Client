@@ -1,11 +1,13 @@
+// Note.jsx
 import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
-import ColorBar from '../ColorBar/ColorBar'; // וודא שיבוא תקין של ColorBar
+import ColorBar from '../ColorBar/ColorBar';
 import styles from './Note.module.css';
 
 function Note({ id, text, color, onDelete, onEdit }) {
   const [noteText, setNoteText] = useState(text);
-  const [showColorBar, setShowColorBar] = useState(false); // משתנה מצב להצגת ColorBar
+  const [noteColor, setNoteColor] = useState(color);
+  const [showColorBar, setShowColorBar] = useState(false);
 
   const handleEdit = (e) => {
     const newText = e.target.innerText;
@@ -14,17 +16,22 @@ function Note({ id, text, color, onDelete, onEdit }) {
   };
 
   const handleColor = () => {
-    setShowColorBar(!showColorBar); // משנה את מצב הצגת ColorBar
+    setShowColorBar(!showColorBar);
+  };
+
+  const handleColorChange = (newColor) => {
+    setNoteColor(newColor);
+    setShowColorBar(false); // סגירת סרגל הצבעים
   };
 
   return (
-    <div className={styles.noteCard} style={{ backgroundColor: color }}>
+    <div className={styles.noteCard} style={{ backgroundColor: noteColor }}>
       <p contentEditable onBlur={handleEdit}>{noteText}</p>
       {!showColorBar && <div className={styles.buttonsBar}>
-        <button className={styles.colorIcon} onClick={handleColor}></button>
+        <button className={styles.colorIcon} onClick={handleColor} style={{ backgroundColor: noteColor }}></button>
         <button onClick={() => onDelete(id)}><FaTrash /></button>
       </div>}
-      {showColorBar && <ColorBar />}
+      {showColorBar && <ColorBar onColorSelect={handleColorChange} />}
     </div>
   );
 }

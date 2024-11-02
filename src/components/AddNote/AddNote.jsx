@@ -1,19 +1,27 @@
-import styles from './AddNote.module.css'
+// AddNote.jsx
+import styles from './AddNote.module.css';
+import { addNoteToServer } from '../../service/controller';
 
-function AddNote({notes, setNotes}) {
+function AddNote({  setNotes}) {
   const colors = ['green', 'blue', 'purple', 'orange'];
 
-  const handleAddNote = () => {
+  const handleAddNote = async () => {
     const newNote = {
-      id: Date.now(),
       text: 'Text',
       color: colors[Math.floor(Math.random() * colors.length)]
     };
-    setNotes([...notes, newNote]);
+
+    // שליחת הפתק החדש לשרת וקבלת הפתק השמור בחזרה
+    const savedNote = await addNoteToServer(newNote);
+    
+    if (savedNote) { // ודא שהפתק נשמר בהצלחה
+      // עדכון ה-state עם הפתק החדש
+      setNotes(prevNotes => [...prevNotes, savedNote]);
+    }
   };
 
   return (
-    <div >
+    <div>
       <button className={styles.addButton} onClick={handleAddNote}>+</button>
     </div>
   );

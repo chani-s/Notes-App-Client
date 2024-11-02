@@ -10,6 +10,40 @@ export const fetchNotes = async () => {
     }
 };
 
+
+export const addNote = async (newNote) => {
+    try {
+        const response = await fetch('http://localhost:8080/api/notes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newNote),
+        });
+        return await response.json(); // מחזיר את הפתק החדש שנוסף, כולל ה-id מהשרת
+    } catch (error) {
+        console.error('Failed to add note:', error);
+    }
+};
+
+export const addNoteToServer = async (note) => {
+    try {
+      const response = await fetch('http://localhost:8080/api/notes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(note)
+      });
+      return await response.json(); // החזרת הפתק השמור
+    } catch (error) {
+      console.error('Failed to add note:', error);
+      return null; // מחזיר null במקרה של שגיאה
+    }
+  };
+  
+
+
 export const deleteNote = async (id) => {
     try {
         await fetch(`http://localhost:8080/api/notes/${id}`, { method: 'DELETE' });

@@ -7,11 +7,12 @@
     justify-content: space-between;
 }
 
-.colorIcon{
+.colorIcon {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-}
+    border: solid 2px white;
+  }
 
 .red{
     background-color: red;
@@ -21,10 +22,10 @@
     background-color: blue;
 }
 
-.yellow{
-    background-color: yellow;
+.green{
+    background-color: green;
 }
 
-.pink{
-    background-color: pink;
+.orange{
+    background-color: orange;
 }
