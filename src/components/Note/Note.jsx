@@ -4,7 +4,7 @@ import { FaTrash } from 'react-icons/fa';
 import ColorBar from '../ColorBar/ColorBar';
 import styles from './Note.module.css';
 
-function Note({ id, text, color, onDelete, onEdit }) {
+function Note({ id, text, color, onDelete, onEdit, onColoring }) {
   const [noteText, setNoteText] = useState(text);
   const [noteColor, setNoteColor] = useState(color);
   const [showColorBar, setShowColorBar] = useState(false);
@@ -21,7 +21,8 @@ function Note({ id, text, color, onDelete, onEdit }) {
 
   const handleColorChange = (newColor) => {
     setNoteColor(newColor);
-    setShowColorBar(false); // סגירת סרגל הצבעים
+    setShowColorBar(false); 
+    onColoring(id, newColor); 
   };
 
   return (

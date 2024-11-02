@@ -20,7 +20,7 @@ export const addNote = async (newNote) => {
             },
             body: JSON.stringify(newNote),
         });
-        return await response.json(); // מחזיר את הפתק החדש שנוסף, כולל ה-id מהשרת
+        return await response.json(); 
     } catch (error) {
         console.error('Failed to add note:', error);
     }
@@ -35,10 +35,10 @@ export const addNoteToServer = async (note) => {
         },
         body: JSON.stringify(note)
       });
-      return await response.json(); // החזרת הפתק השמור
+      return await response.json();
     } catch (error) {
       console.error('Failed to add note:', error);
-      return null; // מחזיר null במקרה של שגיאה
+      return null; 
     }
   };
   
@@ -53,9 +53,22 @@ export const deleteNote = async (id) => {
     }
 };
 
-export const updateNote = async (id, updatedNote) => {
+export const updateNoteText = async (id, updatedNote) => {
     try {
         const response = await fetch(`http://localhost:8080/api/notes/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedNote),
+        });
+        return await response.json();
+    } catch (error) {
+        console.error('Failed to update note:', error);
+    }
+};
+
+export const updateNoteColor = async (id, updatedNote) => {
+    try {
+        const response = await fetch(`http://localhost:8080/api/notes/color/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedNote),

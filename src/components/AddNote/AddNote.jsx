@@ -3,7 +3,7 @@ import styles from './AddNote.module.css';
 import { addNoteToServer } from '../../service/controller';
 
 function AddNote({  setNotes}) {
-  const colors = ['green', 'blue', 'purple', 'orange'];
+  const colors = ['#006D77', '#83C5BE', '#FFDDD2', '#E29578'];
 
   const handleAddNote = async () => {
     const newNote = {
@@ -11,11 +11,9 @@ function AddNote({  setNotes}) {
       color: colors[Math.floor(Math.random() * colors.length)]
     };
 
-    // שליחת הפתק החדש לשרת וקבלת הפתק השמור בחזרה
     const savedNote = await addNoteToServer(newNote);
     
-    if (savedNote) { // ודא שהפתק נשמר בהצלחה
-      // עדכון ה-state עם הפתק החדש
+    if (savedNote) { 
       setNotes(prevNotes => [...prevNotes, savedNote]);
     }
   };

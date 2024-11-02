@@ -3,17 +3,17 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 200px;
-  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  width: 200px; 
+  height: 200px; 
 }
+
 
 .noteCard p {
   margin: 0;
-  flex-grow: 1; /* ממלא את שטח הטקסט כדי לדחוק את הכפתורים למטה */
+  font-size: 20px; 
+  color: #282C34;
 }
 
 .buttonsBar {
@@ -27,5 +27,6 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: solid 2px white;
+  border: solid 1px #282C34;
+  box-shadow: 0 8px 16px rgb(34, 34, 34);
 }
