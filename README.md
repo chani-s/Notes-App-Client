@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# My Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My Notes App is a note-taking application that allows users to create, edit, delete, and change the color of their notes.
 
-## Available Scripts
+## Author
 
-In the project directory, you can run:
+- [Chani Slater](https://github.com/chani-s)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Add Notes**: Users can add a new note with default text and a random color.
+- **Edit Note Content**: Users can change the content of any note.
+- **Delete Notes**: Users can delete any existing note.
+- **Change Note Color**: Users can change the background color of each note using a color bar.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js
+- npm (comes with Node.js)
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository to your machine:
+    https://github.com/chani-s/Notes-App-Client.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install the dependencies:
+    cd Notes-App-Client
+    npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the Application
 
-### `npm run eject`
+1. Clone the server repository to your machine:
+    https://github.com/chani-s/Notes-App-Server.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Run the server according to README. 
+    Ensure that the server is running on localhost:8080
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Run the local APP:
+    ### 'npm start'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Open your browser and go to:
+    localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Client-Side Code - Function Descriptions:
+### controller.jsx :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **fetchNotes:** Sends a GET request to retrieve the list of notes from the server.
+- **addNoteToServer:** Sends a POST request to add a new note to the server.
+- **deleteNote:** Sends a DELETE request to delete a note by its ID.
+- **updateNoteText:** Sends a PUT request to update the content of a note by its ID.
+- **updateNoteColor:** Sends a PUT request to update the color of a note by its ID.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Main Components:
 
-### Code Splitting
+- **App:** The main component that contains the app title and the NoteList component.
+- **NoteList:** Displays the list of notes and enables adding, editing, and deleting notes.
+Note: Displays an individual note with editable text and color options.
+AddNote: Button for adding a new note.
+ColorBar: Color bar for selecting a background color for each note.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
